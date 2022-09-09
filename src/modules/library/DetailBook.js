@@ -119,11 +119,11 @@ export default function DetailBook() {
   };
 
   const showalertsuccess = () => {
-    alert.show(l10n.success_add_cart[lang], { timeout: 2000 });
+    alert.show(l10n.success_add_cart[lang], { timeout: 5000 });
   };
 
   const showalertfailed = () => {
-    alert.show(l10n.failed_add_cart[lang], { timeout: 2000 });
+    alert.show(l10n.failed_add_cart[lang], { timeout: 5000 });
   };
 
   const doAddCart = () => {

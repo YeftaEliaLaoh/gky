@@ -72,28 +72,28 @@ export default function EditProfile() {
     };
     console.log(JSON.stringify(data));
     if (name == "" || phone_number == "" || email == "") {
-      return alert.error(l10n.all_must_required[lang], { timeout: 2000 });
+      return alert.error(l10n.all_must_required[lang], { timeout: 5000 });
     }
 
     doEditProfile(name, email, phone_number, token)
       .then((response) => {
         console.log(response.data);
         if (response.data.message == "Profile updated, please replace token") {
-          alert.info(l10n.success[lang], { timeout: 2000 });
+          alert.info(l10n.success[lang], { timeout: 5000 });
           localStorage.setItem("token", response.data.token)
           setTimeout(() => {
             history.goBack();
           },2000)
         } else {
-          alert.info(l10n.something_wrong, { timeout: 2000 });
+          alert.info(l10n.something_wrong, { timeout: 5000 });
         }
       })
 
       .catch((err) => {
         if (err.response.data.status != null) {
-          alert.error(err.response.data.message, { timeout: 2000 });
+          alert.error(err.response.data.message, { timeout: 5000 });
         } else {
-          alert.info(l10n.something_wrong, { timeout: 2000 });
+          alert.info(l10n.something_wrong, { timeout: 5000 });
         }
       });
   };
@@ -136,7 +136,6 @@ export default function EditProfile() {
             <input
               type={"text"}
               value={email}
-              disabled
               onChange={(event) => set_email(event.target.value)}
             />
           </div>

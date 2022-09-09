@@ -54,19 +54,19 @@ export default function CartLibrary() {
     bookRent(sesi_id, token)
       .then((res) => {
         if (res.data.status == "success") {
-          alert.success(res.data.status, { timeout: 2000 });
+          alert.success(res.data.status, { timeout: 5000 });
           history.push("/tanda_terima", { id: res.data.message.booking_id });
         }
       })
       .catch((err) => {
         console.log(err.response.data);
         if (err.response.data.status == "success") {
-          alert.success(err.response.data.status, { timeout: 2000 });
+          alert.success(err.response.data.status, { timeout: 5000 });
           history.push("/tanda_terima", {id: err.response.data.message.booking_id});
         } else {
           alert.error(
             l10n.failed_rent[lang] + " " + err.response.data.message,
-            { timeout: 2000 }
+            { timeout: 7000 }
           );
         }
       });
@@ -96,11 +96,11 @@ export default function CartLibrary() {
   };
 
   const showalertdelete = () => {
-    alert.success(l10n.success_delete_book[lang], { timeout: 2000 });
+    alert.success(l10n.success_delete_book[lang], { timeout: 5000 });
   };
 
   const faileddeletebook = () => {
-    alert.show(l10n.failed_delete_book[lang], { timeout: 2000 });
+    alert.show(l10n.failed_delete_book[lang], { timeout: 5000 });
   };
 
   return (

@@ -20,7 +20,7 @@ const ForgotPassword = () => {
 
   let submitForgotPassword = () => {
     if (email.length == 0) {
-      alert.show(l10n.all_must_required[lang], { timeout: 2000 });
+      alert.show(l10n.all_must_required[lang], { timeout: 3000 });
       alert.removeAll();
       return;
     }
@@ -29,6 +29,7 @@ const ForgotPassword = () => {
         console.log(response.data);
         if (response.data.status == "success") {
           alert.show(response.data.message);
+          history.push("/");
         }
       })
       .catch((err) => {

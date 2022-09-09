@@ -80,31 +80,31 @@ export default function EditPassword() {
     };
 
     if (current_password == "") {
-      return alert.error(l10n.password_current_required[lang], { timeout: 2000 });
+      return alert.error(l10n.password_current_required[lang], { timeout: 5000 });
     } else if (new_password == ""){
-      return alert.error(l10n.new_password_required[lang], { timeout: 2000 });
+      return alert.error(l10n.new_password_required[lang], { timeout: 5000 });
     } else if (new_password !== confirm_password){
-      return alert.error(l10n.password_not_match[lang], { timeout: 2000 });
+      return alert.error(l10n.password_not_match[lang], { timeout: 5000 });
     }
 
     doChangePassword(dataPassword,token)
       .then((response) => {
         console.log(response.data);
         if (response.data.message) {
-          alert.info(l10n.success[lang], { timeout: 2000 });
+          alert.info(l10n.success[lang], { timeout: 5000 });
           setTimeout(() => {
             history.goBack();
           },2000)
         } else {
-          alert.info(l10n.something_wrong, { timeout: 2000 });
+          alert.info(l10n.something_wrong, { timeout: 5000 });
         }
       })
 
       .catch((err) => {
         if(err.message){
-          alert.error(l10n.password_current_failed[lang], { timeout: 2000 });
+          alert.error(l10n.password_current_failed[lang], { timeout: 5000 });
         } else {
-          alert.info(l10n.something_wrong[lang], { timeout: 2000 });
+          alert.info(l10n.something_wrong[lang], { timeout: 5000 });
         }
       });
   };

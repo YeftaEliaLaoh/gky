@@ -90,13 +90,13 @@ export default function DetailHistory() {
     }
     doCancelRent(location.state.id, tokens)
       .then(() => {
-        alert.success("Success cancel peminjaman", { timeout: 2000 });
+        alert.success("Success cancel peminjaman", { timeout: 5000 });
         setTimeout(() => {
           history.goBack()
         },2500)
       })
       .catch((err) => {
-        alert.error("Failed cancel peminjaman", { timeout: 2000 });
+        alert.error("Failed cancel peminjaman", { timeout: 5000 });
       });
  
   };
@@ -108,13 +108,13 @@ export default function DetailHistory() {
     }
     doExtendRent(location.state.id, tokens)
       .then(() => {
-        alert.success("Success perpanjang peminjaman", { timeout: 2000 });
+        alert.success("Success perpanjang peminjaman", { timeout: 5000 });
         setTimeout(() => {
           history.goBack()
         },2500)
       })
       .catch((err) => {
-        alert.error("Failed perpanjang peminjaman", { timeout: 2000 });
+        alert.error("Failed perpanjang peminjaman", { timeout: 5000 });
       });
  
   };

@@ -26,7 +26,7 @@ const Register = () => {
 
   let register = () => {
     if (name.length == 0 || email.length == 0 || phone_number.length == 0 || password.length == 0 || password_confirmation.length == 0) {
-      alert.show(l10n.all_must_required[lang], { timeout: 2000 });
+      alert.show(l10n.all_must_required[lang], { timeout: 5000 });
       alert.removeAll();
       return;
     }

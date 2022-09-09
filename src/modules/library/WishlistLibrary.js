@@ -80,11 +80,11 @@ export default function WishlistLibrary() {
     deleteWishlist(item_id, token)
       .then((res) => {
         console.log(res.data);
-        alert.info("Success delete from wishlist", { timeout: 2000 });
+        alert.info("Success delete from wishlist", { timeout: 5000 });
       })
       .catch((err) => {
         console.log(err.response);
-        alert.error("Failed delete from wishlist", { timeout: 2000 });
+        alert.error("Failed delete from wishlist", { timeout: 5000 });
       });
     doGetWishlist(token);
   };

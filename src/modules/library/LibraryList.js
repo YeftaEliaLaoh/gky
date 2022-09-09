@@ -193,11 +193,11 @@ export default function LibraryList() {
     }
     deleteWishlist(item_id, token)
       .then(() => {
-        alert.info("Success delete from wishlist", { timeout: 2000 });
+        alert.info("Success delete from wishlist", { timeout: 5000 });
       })
       .catch((err) => {
         console.log(err.response);
-        alert.error("Failed delete from wishlist", { timeout: 2000 });
+        alert.error("Failed delete from wishlist", { timeout: 5000 });
       });
     doGetfilter(
       token,
@@ -218,10 +218,10 @@ export default function LibraryList() {
     }
     createWishlist(item_id, token)
       .then(() => {
-        alert.success("Success add to wishlist", { timeout: 2000 });
+        alert.success("Success add to wishlist", { timeout: 5000 });
       })
       .catch((err) => {
-        alert.error("Failed add to wishlist", { timeout: 2000 });
+        alert.error("Failed add to wishlist", { timeout: 5000 });
       });
     doGetfilter(
       token,

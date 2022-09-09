@@ -56,7 +56,7 @@ export default function Profile() {
       })
       .catch((err) => {
         if (err.response.data.message) {
-          alert.info(err.response.data.message, { timeout: 2000 });
+          alert.info(err.response.data.message, { timeout: 5000 });
         }
       });
   };
@@ -73,7 +73,7 @@ export default function Profile() {
           setIsMember(true);
         }
         if (err.response.data.message) {
-          alert.info(err.response.data.message, { timeout: 2000 });
+          alert.info(err.response.data.message, { timeout: 5000 });
         }
       });
   };
@@ -88,7 +88,7 @@ export default function Profile() {
       })
       .catch((err) => {
         if (err.response.data.message) {
-          alert.info(err.response.data.message, { timeout: 2000 });
+          alert.info(err.response.data.message, { timeout: 5000 });
         }
       });
   };
@@ -98,17 +98,17 @@ export default function Profile() {
       .then((response) => {
 
         if (response.data.message) {
-          alert.info(l10n.success[lang], { timeout: 2000 });
+          alert.info(l10n.success[lang], { timeout: 5000 });
           setTimeout(() => {
             history.goBack();
           },2000)
         } else {
-          alert.info(l10n.something_wrong, { timeout: 2000 });
+          alert.info(l10n.something_wrong, { timeout: 5000 });
         }
 
       })
       .catch((err) => {
-        alert.info(l10n.something_wrong[lang], { timeout: 2000 });
+        alert.info(l10n.something_wrong[lang], { timeout: 5000 });
 
       });
   };

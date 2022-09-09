@@ -13,6 +13,8 @@ import { Link, useHistory } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import "./LibraryCategory.css";
 import { getHistory } from "../../config/api";
+import { getTandaTerima } from "../../config/api";
+
 import { useAlert } from "react-alert";
 import moment from "moment";
 
@@ -23,20 +25,41 @@ export default function HistoryLibrary() {
   const [enddate, setEndDate] = useState(moment().format("yyyy-MM-DD"));
   const [token, setToken] = useState(null);
   const alert = useAlert();
+  const xData = [];
 
   const doGetHistory = (token) => {
     console.log(startdate);
     getHistory(startdate, enddate, token)
       .then((res) => {
         if (res.data.status == "success") {
-          console.log(res.data);
-          setData(res.data.data);
+            //console.log(res.data);
+            doGetTandaTerima(res,token);
         }
       })
       .catch((error) => {
         console.log(error.response);
         alert.error("Something went wrong");
       });
+  };
+
+   const doGetTandaTerima = (h,token) => {
+    console.log(h.data.data.length);
+
+    for (let i = 0; i < h.data.data.length; i++) {
+      getTandaTerima( h.data.data[i].booking_id, token)
+      .then((res) => {
+        if (res.data.status == "success") {
+          let x = Object.assign(h.data.data[i], res.data.data)
+          xData.push(x);
+        }
+      })
+      .catch((error) => {
+        console.log(error.response);
+        alert.error("Something went wrong");
+      });
+    }
+    setTimeout(function() {setData(xData)}, 1000)
+    
   };
 
   useEffect(() => {
@@ -99,7 +122,9 @@ export default function HistoryLibrary() {
                 className="list-history-items"
                 onClick={() => history.push("/detail_history", {id: item.booking_id,approveDate: item.approveddate})}
               >
-                <div className="panel panel-default panelhead">
+                <div className="panel panel-default panelhead" style={{
+                            display: item.status === "canceled" ? "none" : "block"
+                          }}>
                   <div className="panel-heading text-center" style={{paddingTop:'10px'}}>
                     Peminjaman Buku {nomor + 1}
                   </div>
@@ -110,7 +135,7 @@ export default function HistoryLibrary() {
                         <tr>
                           <td>Status Peminjaman</td>
                           <td>:</td>
-                          <td>{item.approveddate !== null ? "Sedang Dipinjam" : "Belum Diambil"}</td>
+                          <td>{ item.is_returned === 0 ? item.approveddate !== null ? "Telah Diambil" : "Belum Diambil" : "Telah Dikembalikan"}</td>
                         </tr>
                         <tr>
                           <td>Jumlah Buku</td>
