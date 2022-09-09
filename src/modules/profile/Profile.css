@@ -1,0 +1,158 @@
+@media only screen and (min-width: 601px) {
+    .title {
+        color: #19406C;
+        font-size: larger;
+        width: 300px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        display: inline;
+    }
+    .ic_back {
+        width: 30px;
+        margin-top: 10px;
+    }
+    .ic_inbox1 {
+        margin-top: 10px;
+        width: auto;
+    }
+    .containerinbox{
+        width: 1000px;
+        display: block;
+    }
+    .inbox_link {
+        text-decoration: none;
+        color: black;
+    }
+    .profile_img{
+        width: 150px;
+        margin-left: 18px;
+    }
+    .icon_edit{
+        width: 20px;
+        margin-top: 140px;
+    }
+    .edit_icon{
+        position: absolute;
+        top: -65px;
+        right: -40px;
+    }
+    .container_profile{
+        display:inline;
+        position:relative;
+    }
+    .name_membership{
+        display: block;
+    }
+    .profile_link {
+        text-decoration: none;
+        color: black;
+    }
+    .btnNext {
+        width: 200px;
+        border-radius: 30px;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        background-color: #3059E1;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .circle_logo{
+        background-color: #ffffff;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        position:absolute;
+        margin-Left: 25px;
+        margin-top: 10px;
+        border-style:solid;
+        border-color: rgb(250, 200, 73);
+    }
+    .container_card{
+        background-image:url(../../assets/images/card.svg) ;
+        position: fixed;
+        width: max-content;
+    }
+
+
+}
+    
+@media only screen and (max-width: 600px) {
+    .title {
+        color: #19406C;
+        font-size: larger;
+        width: 300px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        display: inline;
+    }
+    .ic_back {
+        width: 30px;
+        margin-top: 10px;
+    }
+    .ic_inbox1 {
+        margin-top: 10px;
+        width: auto;
+    }
+    .containerinbox{
+        width: 1000px;
+        display: block;
+    }
+    .inbox_link {
+        text-decoration: none;
+        color: black;
+    }
+    .profile_img{
+        width: 150px;
+        margin-left: 18px;
+    }
+    .icon_edit{
+        width: 20px;
+        margin-top: 140px;
+    }
+    .container_profile{
+        display:inline;
+    }
+    .name_membership{
+        display: block;
+    }
+    .profile_link {
+        text-decoration: none;
+        color: black;
+    }
+    .btnNext {
+        width: 200px;
+        border-radius: 30px;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        background-color: #3059E1;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .circle_logo{
+        background-color: #ffffff;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        position:absolute;
+        margin-Left: 25px;
+        margin-top: 10px;
+        border-style:solid;
+        border-color: rgb(250, 200, 73);
+    }
+    .container_card{
+        background-image:url(../../assets/images/card.svg) ;
+        position: fixed;
+        width: max-content;
+    }
+    .edit_icon{
+        position: absolute;
+        top: 90px;
+        /* left: 217px; */
+    }
+
+
+}

@@ -1,0 +1,55 @@
+@media only screen and (min-width: 601px) {
+.title {
+    color: #19406C;
+    font-size: larger;
+    width: 300px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: inline;
+}
+.ic_back {
+    width: 30px;
+    margin-top: 10px;
+}
+.ic_inbox1 {
+    margin-top: 10px;
+    width: auto;
+}
+.containerinbox{
+    width: 1000px;
+    display: block;
+}
+.inbox_link {
+    text-decoration: none;
+    color: black;
+}
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        color: #19406C;
+        font-size: larger;
+        width: 300px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        display: inline;
+    }
+    .ic_back {
+        width: 30px;
+        margin-top: 10px;
+    }
+    .ic_inbox1 {
+        margin-top: 10px;
+        width: auto;
+    }
+    .containerinbox{
+        width: 1000px;
+        display: block;
+    }
+    .inbox_link {
+        text-decoration: none;
+        color: black;
+    }
+    }

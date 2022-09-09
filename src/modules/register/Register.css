@@ -1,0 +1,51 @@
+.ic_back {
+    width: 30px;
+    margin-top: 10px;
+}
+.header{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.inputName{
+    width: 100%;
+    border-bottom: 2px solid;
+    border-color: #19406C;
+}
+.inputEmail{
+    width: 100%;
+    border-bottom: 2px solid;
+    border-color: #19406C;
+}
+input {
+    border-width:2px;
+    width: 100%;
+    outline: none;
+    border-bottom: 2px;
+    border: none;
+}
+.link_login {
+    text-decoration: none;
+    color: #19406C;
+}
+.titleInput{
+    font-weight: bold;
+}
+.Input_otp{
+    font-size: small;
+    font-weight: lighter;
+}
+.otpContainer {
+    width: 100%;
+}
+.otpInput {
+    display: block; 
+    margin: 1em auto; 
+    border-bottom: solid;
+    padding: 0; 
+    width: 100%;
+    background: repeating-linear-gradient(90deg, rgb(8, 8, 8) 0 , rgb(5, 5, 5) 1ch, transparent 0, transparent 2ch) 0 100%/ 260px 1px no-repeat; 
+    font: 38px monospace;
+    letter-spacing: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
