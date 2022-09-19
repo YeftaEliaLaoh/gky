@@ -31,6 +31,7 @@ const author = "author";
 const parent_categories = "parent_categories";
 const forgot_password = "forget_password"
 const extend_rent = "perpanjang_rent";
+const member_kelas = "member_kelas";
 
 const postRegistration = (name, email, phone_number,password, password_confirmation) => {
   let data = {
@@ -47,7 +48,12 @@ const postForgotPassword = (email) => {
   let data = {
     email
   };
-  return axios.post(baseURL + forgot_password, data);
+  return axios.post(baseURL + forgot_password, data, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    },
+  });
 };
 
 const postLogin = (phone_number,password) => {
@@ -397,6 +403,14 @@ const getParentCategory = (token) => {
   });
 };
 
+const getMemberKelas = (token) => {
+  return axios.get(baseURL + member_kelas, {
+    headers: {
+      token: token,
+    },
+  });
+};
+
 export {
   postRegistration,
   postForgotPassword,
@@ -429,5 +443,6 @@ export {
   doCancelRent,
   doExtendRent,
   doChangePassword,
-  doExtendMembership
+  doExtendMembership,
+  getMemberKelas
 };

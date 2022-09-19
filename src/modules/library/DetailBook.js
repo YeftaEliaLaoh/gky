@@ -52,6 +52,7 @@ export default function DetailBook() {
   const maxSteps = images.length;
 
   const [token, setToken] = useState(null);
+  const [code, setCode] = useState("");
   const [data, setData] = useState({
     // id: 1,
     // barcode: "0401575444440",
@@ -84,8 +85,11 @@ export default function DetailBook() {
   useEffect(() => {
     let language = localStorage.getItem("lang") || "id";
     let token = localStorage.getItem("token");
+    let code = localStorage.getItem("code");
     setLang(language);
     setToken(token);
+    setCode(code);
+    //console.log(code);
     if (location.state.id != null && token != null) {
       doGetItem(token, location.state.id);
     } else {
@@ -97,6 +101,7 @@ export default function DetailBook() {
     getItems(token, id)
       .then((res) => {
         if (res.data.status == "success") {
+          console.log(res.data);
           setData(res.data.data);
         }
       })
@@ -222,7 +227,7 @@ export default function DetailBook() {
           <li>
             <b>{l10n.loan_time[lang]}</b>
           </li>
-          <h6>14 Hari</h6>
+          <h6>{code.substring(0,3) === "002" ? 30 : 14} Hari</h6>
         </Col>
         <Col xs="1" md="2" lg="3"></Col>
       </Row>

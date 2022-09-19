@@ -113,7 +113,7 @@ export default function EditPassword() {
     <Row style={{maxWidth: "320px", margin:'0 auto'}}>
 
       <Col xs={12} style={{display:'flex', flexDirection: "row",alignItems: "center"}}>
-        <Link to="/" style={{height:45}}>
+        <Link to="/profile" style={{height:45}}>
           <img src={ic_back} alt="back" className="ic_back" />
         </Link>
         <span style={{fontSize:"16px",fontWeight:"bold", marginLeft:15}}>{l10n.Profile[lang]}</span>

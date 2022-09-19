@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../auth/userAuth";
 import "./LoginPage.css";
 import { postLogin } from "../../config/api";
+import { getMemberKelas } from "../../config/api";
 import { useAlert } from "react-alert";
 
 export default function LoginPage() {
@@ -35,13 +36,22 @@ export default function LoginPage() {
 
     postLogin(phone_number, password)
       .then((response) => {
-        console.log();
+        console.log(response);
         if (response.data.status == "success") {
-          alert.show(response.data.status)
           localStorage.setItem('token', response.data.token);
-          history.replace('/')
-          window.location.reload();
-
+          getMemberKelas(response.data.token)
+            .then((responseMember) => {
+              if (responseMember.data.status == "success") {
+                localStorage.setItem('code', responseMember.data.data.code);
+                alert.show(responseMember.data.status)
+                history.replace('/')
+                window.location.reload();
+              }
+         })
+         .catch((err) => {
+           console.log(err.response);
+           alert.show(err.response.data.message);
+         });
         }
       })
       .catch((err) => {

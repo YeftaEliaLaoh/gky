@@ -195,12 +195,12 @@ export default function DetailHistory() {
           </div>
           <div>
             <div style={{ color: blueDark, fontSize: 15, fontWeight: "bold" }}>
-              {l10n.loan_date[lang]}
+              {l10n.tanggal_pengambilan[lang]}
             </div>
             <Row
               style={{ justifyContent: "space-between", alignItems: "stretch" }}
             >
-              <Col style={{ textAlign: "start" }}>{l10n.loan_date[lang]}</Col>
+              <Col style={{ textAlign: "start" }}>{l10n.tanggal_pengambilan[lang]}</Col>
               <Col style={{ textAlign: "end" }}>
                 {moment(data.rent_date).format("DD MMMM YYYY")}
               </Col>
@@ -208,7 +208,7 @@ export default function DetailHistory() {
           </div>
           <div>
             <div style={{ color: blueDark, fontSize: 15, fontWeight: "bold" }}>
-              {l10n.tanggal_pengambilan[lang]}
+              {l10n.Return_Date[lang]}
             </div>
             {data.books.map((item, index) => (
               <Row

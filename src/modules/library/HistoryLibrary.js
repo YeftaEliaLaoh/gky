@@ -50,6 +50,7 @@ export default function HistoryLibrary() {
       .then((res) => {
         if (res.data.status == "success") {
           let x = Object.assign(h.data.data[i], res.data.data)
+          //console.log(x);
           xData.push(x);
         }
       })
@@ -58,7 +59,7 @@ export default function HistoryLibrary() {
         alert.error("Something went wrong");
       });
     }
-    setTimeout(function() {setData(xData)}, 1000)
+    setTimeout(function() {setData(xData)}, 2000)
     
   };
 
@@ -115,16 +116,15 @@ export default function HistoryLibrary() {
           </div>
           <br></br>
           {data.map((item, nomor) => (
-            
+          <div key={'list-history-'+nomor}
+              className="panel panel-default panelhead" style={{
+              display: item.status === "canceled" ? "none" : "block"
+            }}>
               <a
-                key={'list-history-'+nomor}
                 style={{ width: '100%', height: 200, textDecoration: "none", cursor: 'pointer'}}
                 className="list-history-items"
                 onClick={() => history.push("/detail_history", {id: item.booking_id,approveDate: item.approveddate})}
               >
-                <div className="panel panel-default panelhead" style={{
-                            display: item.status === "canceled" ? "none" : "block"
-                          }}>
                   <div className="panel-heading text-center" style={{paddingTop:'10px'}}>
                     Peminjaman Buku {nomor + 1}
                   </div>
@@ -155,10 +155,8 @@ export default function HistoryLibrary() {
                       </tbody>
                     </Table>
                   </div>
-                </div>
-                <br></br>
               </a>
-            
+            </div>
           ))}
         </Col>
         </Col>
