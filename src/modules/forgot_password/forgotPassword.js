@@ -26,9 +26,9 @@ const ForgotPassword = () => {
     }
     postForgotPassword(email)
       .then((response) => {
-        console.log(response.data);
-        if (response.data.status == "success") {
-          alert.show(response.data.message);
+        console.log(response.status);
+        if (response.status == "200") {
+          alert.show(l10n.success_email[lang]);
           history.push("/");
         }
       })

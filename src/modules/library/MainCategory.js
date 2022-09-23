@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { l10n } from "../../constants/language";
 import { getParentCategory } from "../../config/api";
 import { Fab, Action } from "react-tiny-fab";
@@ -56,7 +56,7 @@ export default function MainCategory() {
       <Row className="header">
         <Col md="auto" xs="auto">
           <div style={{ justifyContent: "flex-start" }}>
-            <a onClick={() => history.goBack()}>
+          <Link to="/" style={{height:45}}>
               <img
                 src={ic_back}
                 alt="back"
@@ -67,7 +67,7 @@ export default function MainCategory() {
                   marginTop: -5,
                 }}
               />
-            </a>
+            </Link>
             <span style={{ fontSize: 20 }}>{l10n.library[lang]}</span>
           </div>
         </Col>

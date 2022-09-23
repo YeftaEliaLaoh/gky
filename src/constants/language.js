@@ -132,4 +132,5 @@ export const l10n = {
     id: "Silahkan Melakukan Masuk/Daftar Terlebih Dahulu",
     en: "Please Login / Register First",
   },
+  success_email: { id: "Email Success", en: "Success Email" },
 };

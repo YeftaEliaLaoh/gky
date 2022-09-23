@@ -136,7 +136,7 @@ export default function Profile() {
       <Row className="header">
         <Col md="auto" xs="auto">
           <div style={{ justifyContent: "flex-start" }}>
-            <a onClick={() => history.goBack()}>
+          <Link to="/category" style={{height:45}}>
               <img
                 src={ic_back}
                 alt="back"
@@ -147,7 +147,7 @@ export default function Profile() {
                   marginTop: -5,
                 }}
               />
-            </a>
+            </Link>
             <span style={{ fontSize: 20 }}>{l10n.Profile[lang]}</span>
           </div>
         </Col>
