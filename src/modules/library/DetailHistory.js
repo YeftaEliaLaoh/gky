@@ -36,6 +36,7 @@ export default function DetailHistory() {
 
   const [lang, setLang] = useState("id");
   const [token, setToken] = useState(null);
+  const [code, setCode] = useState("");
   const [data, setData] = useState({
     receipt_id: "",
     sesi: "",
@@ -61,8 +62,11 @@ export default function DetailHistory() {
   useEffect(() => {
     let language = localStorage.getItem("lang") || "id";
     let token = localStorage.getItem("token");
+    let code = localStorage.getItem("code");
     setLang(language);
     setToken(token);
+    setCode(code);
+    //console.log(code);
     console.log(location.state.id);
     console.log(token);
     if (location.state.id != null && token != null) {
@@ -189,7 +193,7 @@ export default function DetailHistory() {
                 }}
               >
                 <Col style={{ textAlign: "start" }}>{item.title}</Col>
-                <Col style={{ textAlign: "end" }}>14 {l10n.days[lang]}</Col>
+                <Col style={{ textAlign: "end" }}>{code.substring(0,3) === "002" ? 30 : 14 } {l10n.days[lang]}</Col>
               </Row>
             ))}
           </div>

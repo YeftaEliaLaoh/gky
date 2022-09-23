@@ -19,6 +19,7 @@ export default function CartLibrary() {
   const [lang, setLang] = useState("id");
   const [token, setToken] = useState(null);
   const [data, setData] = useState([]);
+  const [code, setCode] = useState("");
   const [total, setTotal] = useState(0);
   const [sesi_id, set_sesi_id] = useState(1);
   const [disableBtn, setDisableBtn] = useState(false);
@@ -27,8 +28,10 @@ export default function CartLibrary() {
   let alert = useAlert();
   useEffect(() => {
     let language = localStorage.getItem("lang") || "id";
+    let code = localStorage.getItem("code");
     let token = localStorage.getItem("token");
     setLang(language);
+    setCode(code);
     setToken(token);
     if (token != null) {
       doGetCart(token);
@@ -192,7 +195,7 @@ export default function CartLibrary() {
                 }}
               >
                 <Col style={{ textAlign: "start" }}>{item.title}</Col>
-                <Col style={{ textAlign: "end" }}>14 Hari</Col>
+                <Col style={{ textAlign: "end" }}>{code.substring(0,3) === "002" ? 30 : 14 } {l10n.days[lang]}</Col>
               </Row>
             ))}
           </div>
