@@ -78,7 +78,7 @@ export default function Inbox() {
                   className="inbox_link"
                 
                 >
-                  <ListItemText primary={item.content} />
+                  <ListItemText primary={item.time +" "+ item.content} />
                 </a>
               </ListItem>
               <Divider variant="inset" component="li" />

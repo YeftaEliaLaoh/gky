@@ -46,6 +46,7 @@ export const l10n = {
   all_must_required: { id: "Semua harus diisi", en: "All must required" },
   something_wrong: { id: "terjadi masalah", en: "something wrong" },
   select_location: { id: "Pilih Lokasi", en: "Select Location" },
+  select_book: { id: "Pilih Buku", en: "Select Book" },
   greatingHome: { id: "Halo", en: "Hello" },
   history: { id: "Riwayat", en: "History" },
   cart: { id: "Keranjang", en: "Cart" },

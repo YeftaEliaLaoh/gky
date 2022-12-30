@@ -283,6 +283,7 @@ export default function LibraryList() {
     getItemsFilter(token, loacationId, categoryId, parentId, page, like, idpublisher, idauthor)
       .then((res) => {
         if (res.data.status == "success") {
+          console.log(res)
           setData(res.data.data.data);
           set_page(res.data.data.current_page);
           set_last_page(res.data.data.last_page);

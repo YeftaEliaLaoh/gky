@@ -36,13 +36,15 @@ export default function LoginPage() {
 
     postLogin(phone_number, password)
       .then((response) => {
-        console.log(response);
-        if (response.data.status == "success") {
+        //console.log(response.data.status);
+        if (response.data.status === "success") {
           localStorage.setItem('token', response.data.token);
           getMemberKelas(response.data.token)
             .then((responseMember) => {
-              if (responseMember.data.status == "success") {
-                localStorage.setItem('code', responseMember.data.data.code);
+              //console.log(responseMember.data.status);
+              if (responseMember.data.status === "success") {
+                localStorage.setItem('code', responseMember.data.code);
+                console.log(responseMember.data.code);
                 alert.show(responseMember.data.status)
                 history.replace('/')
                 window.location.reload();
