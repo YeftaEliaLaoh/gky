@@ -248,13 +248,13 @@ export default function DetailHistory() {
             )
           }
 
-{
+{/* {
             location.state.approveDate !== null && (
               <div>
                 <Button variant="success" style={{ width: 270 }} onClick={()=>extendRent()}>Perpanjang Peminjaman</Button>{' '}
               </div>
             )
-          }
+          } */}
           
         </Col>
       </Row>
