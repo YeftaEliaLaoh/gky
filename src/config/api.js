@@ -230,11 +230,15 @@ const getTandaTerima = (booking_id, token) => {
   });
 };
 
-const doExtendRent= (bookingId,token) => {
+const doExtendRent= (bookingId,token, books) => {
+  //console.log(books);
+  const arr = []
+  Object.keys(books).forEach(key => arr.push({ item_id: books[key].id}))
   let data = {
-    booking_id: bookingId
+    books: arr
   };
-  return axios.post(baseURL + extend_rent, data, {
+  console.log(data);
+  return axios.post(baseURL + extend_rent+"?booking_id="+bookingId, data, {
     headers: {
       token: token,
     },

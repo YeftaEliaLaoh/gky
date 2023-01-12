@@ -77,7 +77,7 @@ export default function DetailHistory() {
   const doGetTandaTrima = (token, id) => {
     getTandaTerima(id, token)
       .then((res) => {
-        console.log(res.data);
+        //console.log(res.data);
         if (res.data.status == "success") {
           setData(res.data.data);
         }
@@ -110,7 +110,8 @@ export default function DetailHistory() {
     if (token == null) {
       logout();
     }
-    doExtendRent(location.state.id, tokens)
+    //console.log(data.books);
+    doExtendRent(location.state.id, tokens, data.books)
       .then(() => {
         alert.success("Success perpanjang peminjaman", { timeout: 5000 });
         setTimeout(() => {
@@ -248,13 +249,13 @@ export default function DetailHistory() {
             )
           }
 
-{/* {
+{ 
             location.state.approveDate !== null && (
               <div>
                 <Button variant="success" style={{ width: 270 }} onClick={()=>extendRent()}>Perpanjang Peminjaman</Button>{' '}
               </div>
             )
-          } */}
+          } 
           
         </Col>
       </Row>
