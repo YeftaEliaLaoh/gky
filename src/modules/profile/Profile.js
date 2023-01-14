@@ -8,6 +8,7 @@ import "./Profile.css";
 import { checkMember, getEditProfile, checkProfile, doExtendMembership } from "../../config/api";
 import { blueDark, blueLight } from "../../constants/color";
 import { useAlert } from "react-alert";
+import UploadService from "../../services/file-upload.service";
 
 export default function Profile() {
   const Barcode = require("react-barcode");
@@ -17,6 +18,12 @@ export default function Profile() {
   const [isMember, setIsMember] = useState(false);
   const [barcode, setBarcode] = useState('null');
   const [dateMember, setDateMember] = useState('-');
+  const [currentFile, setCurrentFile] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [message, setMessage] = useState("");
+  const [imageInfos, setImageInfos] = useState([]);
+
 
   let history = useHistory();
 
@@ -112,7 +119,35 @@ export default function Profile() {
 
       });
   };
+  const selectFile = (e) => {
+    e.preventDefault();
+    setCurrentFile(e.target.files[0]);
+    setPreviewImage(URL.createObjectURL(e.target.files[0]));
+    setProgress(0);
+    setMessage("");
+  }
 
+  
+  const  upload= () => {
+    setProgress(0);
+
+    UploadService.upload(currentFile,token, (event) => {
+      setProgress(Math.round((100 * event.loaded) / event.total))
+    })
+      .then((response) => {
+        console.log(response)
+        setMessage(response.data.message)
+        //return UploadService.getFiles();
+      })
+      // .then((files) => {
+      //   setImageInfos(files.data)
+      // })
+      .catch((err) => {
+        setProgress(0);
+        setMessage("Could not upload the image!")
+        setCurrentFile(null)
+      });
+  }
   Barcode.defaultProps = {
     format: "CODE128",
     renderer: "svg",
@@ -166,13 +201,30 @@ export default function Profile() {
                     width={150}
                     style={{ borderRadius: 100 }}
                   />
-                  <a
-                    className="edit_icon"
-                    onClick={() => history.push("/edit_photo")}
-                  >
-                    <img src={ic_edit} class="icon_edit" />
-                  </a>
                 </div>
+                <br />
+                <br />
+              </div>
+              {message && (
+              <div className="alert alert-secondary mt-3" role="alert">
+                {message}
+              </div> 
+            )}
+              <div className="d-flex justify-content-around">
+              <input type="file" accept="image/*" onChange={selectFile}  style={{
+                        padding: 5,
+                        backgroundColor: "gray",
+                        border: "none",
+                        width: "40px",
+                        borderRadius: 30,
+                        color: "white",
+                        fontWeight: "bold",
+                        paddingRight: 10,
+                        paddingLeft: 10,
+                      }}/>
+              </div>
+              <div className="justify-content-center align-items-center bottomArea d-flex flex-column">
+              <button className="btn btn-success btn-sm" disabled={!currentFile} onClick={upload}>Upload</button>
               </div>
               <br />
               <div className="justify-content-center align-items-center bottomArea d-flex flex-column">
