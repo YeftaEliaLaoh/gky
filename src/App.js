@@ -32,6 +32,7 @@ import DaftarMember from "./modules/profile/DaftarMember";
 import BayarMember from "./modules/profile/BayarMember";
 import TandaTerimaMember from "./modules/profile/TandaTerimaMember";
 import GantiBahasa from "./modules/profile/GantiBahasa";
+import HapusAkun from "./modules/profile/HapusAkun";
 import DetailHistory from "./modules/library/DetailHistory";
 import MainCategory from "./modules/library/MainCategory";
 import ForgotPassword from "./modules/forgot_password/forgotPassword";
@@ -107,6 +108,9 @@ export default function App() {
         </Route>
         <Route path="/ganti_bahasa">
           <GantiBahasa />
+        </Route>
+        <Route path="/hapus_akun">
+          <HapusAkun />
         </Route>
         <Route path="/detail_history">
           <DetailHistory />

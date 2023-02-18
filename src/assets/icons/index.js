@@ -5,6 +5,7 @@ import ic_akun1 from "./akun-1.svg";
 import ic_cart from "./cart.svg";
 import ic_cart1 from "./cart-1.svg";
 import ic_checklist from "./checklist.svg";
+import ic_checklist1 from "./checklist1.svg";
 import ic_clock from "./clock.svg";
 import ic_copy from "./copy.svg";
 import ic_date from "./date.svg";
@@ -44,6 +45,7 @@ export {
   ic_cart,
   ic_cart1,
   ic_checklist,
+  ic_checklist1,
   ic_clock,
   ic_copy,
   ic_date,

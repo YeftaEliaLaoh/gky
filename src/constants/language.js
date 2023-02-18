@@ -119,6 +119,8 @@ export const l10n = {
   change_password: { id: "Ganti Password", en: "Change Password" },
   save: { id: "Simpan", en: "Save" },
   edit_profile: { id: "Edit Akun", en: "Edit Profile" },
+  delete_account: { id: "Hapus Akun", en: "Delete Account" },
+  delete: { id: "Hapus", en: "Delete" },
   success_delete_book: {
     id: "Sukses Menghapus Buku",
     en: "Success delete book",

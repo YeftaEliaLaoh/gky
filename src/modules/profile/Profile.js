@@ -400,6 +400,15 @@ export default function Profile() {
                 </p>
               </a>
               <hr></hr>
+              <a
+                className="profile_link"
+                onClick={() => history.push("/hapus_akun")}
+              >
+                <p>
+                  <b>{l10n.delete_account[lang]}</b>
+                </p>
+              </a>
+              <hr></hr>
             </div>
             <Col xs="1" md="2" lg="3"></Col>
           </Row>

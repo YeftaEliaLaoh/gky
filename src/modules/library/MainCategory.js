@@ -14,6 +14,7 @@ import {
   ic_floating_2,
   ic_history1,
   ic_inbox1,
+  ic_checklist1,
   ic_wishlist1,
   ic_wishlist5,
   ic_wishlist3,
@@ -105,7 +106,7 @@ export default function MainCategory() {
 
         ))}
       </Row>
-      <Fab style={{ bottom: 50, right: 20 }} icon={<img src={ic_floating_2} />}>
+      <Fab style={{ bottom: 50, right: 50 }} icon={<img src={ic_floating_2} />}>
         <Action
           onClick={() => history.push("/history_library")}
           style={{ right: 0, bottom: 0 }}
@@ -123,6 +124,12 @@ export default function MainCategory() {
           style={{ right: 0, bottom: -245 }}
         >
           <img src={ic_akun1} />
+        </Action>
+        <Action
+          onClick={() => history.push("/faq")}
+          style={{ right: -65, bottom: -245 }}
+        >
+          <img src={ic_checklist1} />
         </Action>
       </Fab>
     </Container>
