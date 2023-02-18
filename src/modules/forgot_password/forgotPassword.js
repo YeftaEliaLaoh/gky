@@ -29,7 +29,7 @@ const ForgotPassword = () => {
         console.log(response.status);
         if (response.status == "200") {
           alert.show(l10n.success_email[lang]);
-          history.push("/");
+          //history.push("/");
         }
       })
       .catch((err) => {
@@ -86,7 +86,7 @@ const ForgotPassword = () => {
               className="btnNext"
               onClick={() => submitForgotPassword()}
             >
-              <div>{l10n.next[lang]}</div>
+              <div>{l10n.send[lang]}</div>
             </button>
             <br />
             <br />

@@ -159,16 +159,20 @@ export default function LibraryList() {
         />
         {items}
         <Pagination.Next
-          key={"next"}
-          onClick={() => doGetfilter(
-            token,
-            location.state.idlocation,
-            location.state.category,
-            like,
-            idpublisher,
-            idauthor,
-            location.state.idParent,
-            page + 1)}
+          key="next"
+          onClick={(event) => {
+            console.log(last_page)
+            if(page<last_page)
+              doGetfilter(
+              token,
+              location.state.idlocation,
+              location.state.category,
+              like,
+              idpublisher,
+              idauthor,
+              location.state.idParent,
+              page + 1)}
+          }
         />
         <Pagination.Last
           key={"last"}
@@ -327,20 +331,20 @@ export default function LibraryList() {
             style={{maxWidth:600}}
             placeholder="Search"
             className="search"
-            onChange={(event) => {
+            onKeyUp={(event) => {
               setLikes(event.target.value);
-              doGetfilter(
-                token,
-                location.state.idlocation,
-                location.state.category,
-                like,
-                idpublisher,
-                idauthor,
-                location.state.idParent,
-                1
-              );
+              if(event.keyCode==13)
+                doGetfilter(
+                  token,
+                  location.state.idlocation,
+                  location.state.category,
+                  like,
+                  idpublisher,
+                  idauthor,
+                  location.state.idParent,
+                  1
+                );
             }}
-            value={like}
           />
           <div style={{width:180}}>
           <img

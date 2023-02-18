@@ -110,7 +110,7 @@ const DaftarMember = () => {
         <Col>
           <div style={{ padding: 5, borderRadius: 10, backgroundColor: softRed }}>
             <h5 style={{ textAlign: "center", fontSize: 15 }}>{l10n.benefits_membership[lang]}</h5>
-            <p style={{ textAlign: "center", fontSize: 10 }}>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+            <p style={{ textAlign: "center", fontSize: 10 }}>They will obtain  memberships (permissions) to borrow the books in GKY Pluit’s library.</p>
           </div>
           <div>
             <p>

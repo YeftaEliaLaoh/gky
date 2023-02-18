@@ -33,6 +33,7 @@ export const l10n = {
     en: "Input Your Password",
   },
   next: { id: "Lanjut", en: "Next" },
+  send: { id: "Kirim", en: "Send" },
   not_have_account: {
     id: "Belum punya akun ?",
     en: "Don't have an account yet ?",
