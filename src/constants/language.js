@@ -137,4 +137,5 @@ export const l10n = {
     en: "Please Login / Register First",
   },
   success_email: { id: "Email Success", en: "Success Email" },
+  failed_email: { id: "Email Gagal", en: "Failed Email" },
 };

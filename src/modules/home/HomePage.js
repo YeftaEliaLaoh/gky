@@ -203,7 +203,7 @@ const HomePage = () => {
             </div>
           </div>
           <br></br>
-          <div className="listLiblary justify-content-center disable">
+          {/* <div className="listLiblary justify-content-center disable">
             <div
               style={{
                 backgroundImage: `url(${img_colportage})`,
@@ -227,7 +227,7 @@ const HomePage = () => {
                 {l10n.room_rental[lang]}
               </div>
             </div>
-          </div>
+          </div> */}
           {token != null && (
             <Fab
               // alwaysShowTitle={true}
