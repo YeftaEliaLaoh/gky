@@ -19,6 +19,7 @@ import OtpLogin from "./modules/login/OtpLogin";
 import OtpRegister from "./modules/register/OtpRegister";
 import EditProfile from "./modules/profile/EditProfile";
 import EditPassword from "./modules/profile/EditPassword";
+import FAQ from "./modules/faq/faq";
 import Inbox from "./modules/inbox/Inbox";
 // import HomeLoginPage from "./modules/home/HomeLoginPage";
 import InboxDetail from "./modules/inbox/InboxDetail";
@@ -66,6 +67,9 @@ export default function App() {
         </Route>
         <Route path="/profile">
           <Profile />
+        </Route>
+        <Route path="/faq">
+          <FAQ />
         </Route>
         <Route path="/edit_profile">
           <EditProfile />

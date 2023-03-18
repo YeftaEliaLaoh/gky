@@ -193,7 +193,7 @@ export default function Profile() {
             <div className="d-flex flex-column">
               <br />
               <br />
-              <div className="justify-content-center align-items-center bottomArea">
+              {/* <div className="justify-content-center align-items-center bottomArea">
                 <div className="container_profile">
                   <img
                     src={ic_logo}
@@ -225,7 +225,7 @@ export default function Profile() {
               </div>
               <div className="justify-content-center align-items-center bottomArea d-flex flex-column">
               <button className="btn btn-success btn-sm" disabled={!currentFile} onClick={upload}>Upload</button>
-              </div>
+              </div> */}
               <br />
               <div className="justify-content-center align-items-center bottomArea d-flex flex-column">
                 {l10n.greatingHome[lang]}
