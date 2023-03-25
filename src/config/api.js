@@ -14,6 +14,7 @@ const item = "item";
 const wishlist = "wishlist";
 const create_wishlist = "create_wishlist";
 const delete_wishlist = "delete_wishlist";
+const delete_member = "admin/member/delete";
 const cart = "cart";
 const create_cart = "create_cart";
 const delete_cart = "delete_cart";
@@ -182,11 +183,23 @@ const createWishlist = (item_id, token) => {
     },
   });
 };
-const deleteWishlist = (item_id, token) => {
+const  deleteWishlist = (item_id, token) => {
   let data = {
     item_id,
   };
   return axios.post(baseURL + delete_wishlist, data, {
+    headers: {
+      token: token,
+    },
+  });
+};
+
+const deleteMember = (token,id) => {
+  let data = {
+    id,
+  };
+  //console.log(token)
+  return axios.post(baseURL + delete_member, data, {
     headers: {
       token: token,
     },
@@ -430,6 +443,7 @@ export {
   getWishlist,
   createCart,
   createMember,
+  deleteMember,
   createWishlist,
   doEditProfile,
   bookRent,

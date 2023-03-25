@@ -3,13 +3,26 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { ic_back } from "../../assets/icons";
 import { l10n } from "../../constants/language";
-
+import {
+    deleteMember,
+  } from "../../config/api";
 export default function HapusAkun() {
     const [lang, setLang] = useState("id");
     const [token, setToken] = useState(null);
     const history = useHistory()
 
     const hapusAkun = () => {
+        let token = localStorage.getItem("token");
+        let profile = JSON.parse(localStorage.getItem("profile"));
+
+        setToken(token);
+        if (token != null) {
+        deleteMember(token,profile.id)
+        .then((response) => {
+            console.log("s")
+            //return UploadService.getFiles();
+          })
+        }
     };
 
     return (
