@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "https://andtechnology.online/api/";
+const baseURL = "https://gkypluit.church/gky_api/api/";
 
 // endpoint
 const registration = "registration";

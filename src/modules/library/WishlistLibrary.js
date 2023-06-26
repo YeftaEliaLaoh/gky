@@ -210,7 +210,7 @@ export default function WishlistLibrary() {
                   }
                 >
                   <img
-                    src={"https://andtechnology.online/storage/" + item.image}
+                    src={"https://gkypluit.church/storage/" + item.image}
                     style={{maxWidth: "100%"}}
                   />
                 </div>
